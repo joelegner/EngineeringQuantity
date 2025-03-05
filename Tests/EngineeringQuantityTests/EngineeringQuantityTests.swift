@@ -1,3 +1,11 @@
+//
+//  EngineeringQuantityTests.swift
+//  EngineeringQuantity
+//
+//  Created by Joe Legner on March 4, 2025.
+//  Copyright © 2025 Joe Legner. All rights reserved.
+//
+
 import Testing
 @testable import EngineeringQuantity
 
