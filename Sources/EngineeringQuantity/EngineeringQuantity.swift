@@ -11,6 +11,7 @@ public struct EngineeringQuantity: CustomStringConvertible, Sendable {
         self.forceExponent = forceExponent
     }
     
+    // Multiply two EngineeringQuantity instances
     static func * (lhs: EngineeringQuantity, rhs: EngineeringQuantity) -> EngineeringQuantity {
         return EngineeringQuantity(
             lhs.value * rhs.value,
@@ -19,6 +20,7 @@ public struct EngineeringQuantity: CustomStringConvertible, Sendable {
         )
     }
     
+    // Multiply an EngineeringQuantity by a Double
     static func * (lhs: Double, rhs: EngineeringQuantity) -> EngineeringQuantity {
         return EngineeringQuantity(
             lhs * rhs.value,
@@ -39,6 +41,6 @@ public struct EngineeringQuantity: CustomStringConvertible, Sendable {
     }
 }
 
-// Define base units
-let feet = EngineeringQuantity(1.0, lengthExponent: 1)
-let pounds = EngineeringQuantity(1.0, forceExponent: 1)
+// Define base units, ensuring they are globally accessible
+public let feet = EngineeringQuantity(1.0, lengthExponent: 1)
+public let pounds = EngineeringQuantity(1.0, forceExponent: 1)
