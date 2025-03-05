@@ -1,6 +1,6 @@
 import Foundation
 
-struct EngineeringQuantity: CustomStringConvertible {
+public struct EngineeringQuantity: CustomStringConvertible, Sendable {
     let value: Double
     let lengthExponent: Int
     let forceExponent: Int
@@ -27,7 +27,7 @@ struct EngineeringQuantity: CustomStringConvertible {
         )
     }
     
-    var description: String {
+    public var description: String {
         var components: [String] = []
         if forceExponent > 0 {
             components.append("lb" + (forceExponent > 1 ? "^\(forceExponent)" : ""))
