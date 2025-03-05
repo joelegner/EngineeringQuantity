@@ -1,18 +1,19 @@
 import Foundation
 
 public struct EngineeringQuantity: CustomStringConvertible, Sendable {
-    let value: Double
-    let lengthExponent: Int
-    let forceExponent: Int
+    public let value: Double
+    public let lengthExponent: Int
+    public let forceExponent: Int
     
-    init(_ value: Double, lengthExponent: Int = 0, forceExponent: Int = 0) {
+    // Make the initializer public
+    public init(_ value: Double, lengthExponent: Int = 0, forceExponent: Int = 0) {
         self.value = value
         self.lengthExponent = lengthExponent
         self.forceExponent = forceExponent
     }
     
     // Multiply two EngineeringQuantity instances
-    static func * (lhs: EngineeringQuantity, rhs: EngineeringQuantity) -> EngineeringQuantity {
+    static public func * (lhs: EngineeringQuantity, rhs: EngineeringQuantity) -> EngineeringQuantity {
         return EngineeringQuantity(
             lhs.value * rhs.value,
             lengthExponent: lhs.lengthExponent + rhs.lengthExponent,
@@ -21,7 +22,7 @@ public struct EngineeringQuantity: CustomStringConvertible, Sendable {
     }
     
     // Multiply an EngineeringQuantity by a Double
-    static func * (lhs: Double, rhs: EngineeringQuantity) -> EngineeringQuantity {
+    static public func * (lhs: Double, rhs: EngineeringQuantity) -> EngineeringQuantity {
         return EngineeringQuantity(
             lhs * rhs.value,
             lengthExponent: rhs.lengthExponent,
